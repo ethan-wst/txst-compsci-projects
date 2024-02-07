@@ -79,23 +79,19 @@ using namespace std;
 void IntSet::resize(int new_capacity)
 {
    capacity = new_capacity;
-   int* temp = new int [capacity];
+   int* temp = new int[capacity];
    for (int i = 0; i < used; i++) {
       temp[i] = data[i];
    }
 
-
-   delete[] data; //***Causes Seg Fault***
+   delete[] data;
    data = temp;
-   
 }
 IntSet::IntSet(int initial_capacity)
 {
-   if (initial_capacity < DEFAULT_CAPACITY) {
-      capacity = DEFAULT_CAPACITY;
-   } else {
-      capacity = initial_capacity;
-   } 
+   if (initial_capacity < DEFAULT_CAPACITY) capacity = DEFAULT_CAPACITY;
+   else capacity = initial_capacity;
+
    used = 0;
    data = new int[capacity];
 }
@@ -105,9 +101,8 @@ IntSet::IntSet(const IntSet& src)
    used = src.used;
    capacity = src.capacity;
    data = new int[capacity];
-   for (int i = 0; i < used; i++) {
-      data[i] = src.data[i];
-   }
+
+   for (int i = 0; i < used; i++) data[i] = src.data[i];
 }
 
 IntSet::~IntSet()
@@ -119,9 +114,8 @@ IntSet& IntSet::operator=(const IntSet& rhs)
 {
    if(this != &rhs) {
       int* tempData = new int[rhs.capacity];
-      for (int i = 0; i < rhs.used; i++) {
-         tempData[i] = rhs.data[i];
-      }
+      for (int i = 0; i < rhs.used; i++) tempData[i] = rhs.data[i];
+
       delete[] data;
       data = tempData;
       used = rhs.used;
@@ -212,7 +206,6 @@ bool IntSet::add(int anInt)
          data[used] = anInt;
          used++;
          return true;
-
       } else if (used + 1 > capacity) {
          resize(int(1.5*capacity) + 1);
          data[used] = anInt;
