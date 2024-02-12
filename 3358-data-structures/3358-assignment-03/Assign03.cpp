@@ -122,8 +122,9 @@ char get_user_command()
 
 void show_sequence(sequence src)
 {
-   for ( src.start(); src.is_item(); src.advance() )
+   for (src.start(); src.is_item(); src.advance() ){
       cout << src.current() << endl;
+   }  
 }
 
 double get_number()
@@ -141,6 +142,5 @@ double get_number()
      cin  >> result;
    }
    cin.ignore(999, '\n');
-
    return result;
 }

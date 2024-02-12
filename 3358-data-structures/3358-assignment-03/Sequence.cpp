@@ -48,73 +48,125 @@ namespace CS3358_SP2024
    // CONSTRUCTORS and DESTRUCTOR
    sequence::sequence(size_type initial_capacity)
    {
-      cout << "sequence(size_type initial_capacity) not implemented yet" << endl;
+      capacity = initial_capacity;
+      if(capacity < 1) capacity = 1;
+
+      used = 0;
+      current_index = used;
+
+      data = new value_type[capacity];
    }
 
    sequence::sequence(const sequence& source)
    {
-      cout << "sequence(const sequence& source) not implemented yet" << endl;
+      used = source.used;
+      capacity = source.capacity;
+      current_index = source.current_index;
+
+      data = new value_type[capacity];
+      for (size_t i = 0; i < used; i++) data[i] = source.data[i];
    }
 
    sequence::~sequence()
    {
-      cout << "~sequence() not implemented yet" << endl;
+      delete[] data;
    }
 
    // MODIFICATION MEMBER FUNCTIONS
    void sequence::resize(size_type new_capacity)
    {
-      cout << "resize(size_type new_capacity) not implemented yet" << endl;
+      if (new_capacity < used) new_capacity = used;
+      if (new_capacity == 0) new_capacity = 1;
+
+      capacity = new_capacity;
+      value_type* temp = new value_type[capacity];
+      for (size_t i = 0; i < used; i++) temp[i] = data[i];
+
+      delete[] data;
+      data = temp;
    }
 
    void sequence::start()
    {
-      cout << "start() not implemented yet" << endl;
+      current_index = 0;
    }
 
    void sequence::advance()
    {
-      cout << "advance() not implemented yet" << endl;
+      if (current_index < used) current_index++;
    }
 
    void sequence::insert(const value_type& entry)
    {
-      cout << "insert(const value_type& entry) not implemented yet" << endl;
+      if (used == capacity) resize(int(1.5*capacity) + 1);
+
+      if (current_index == used) {
+         for (size_t i = 0; i < used; i++) data[used-i] = data[used-(i+1)];
+         data[0] = entry;
+         used++;
+      } else {
+         for (size_t i = 0; i < used; i++) data[used-i] = data[used-(i+1)];
+         data[current_index] = entry;
+         used++;
+      }
    }
 
    void sequence::attach(const value_type& entry)
    {
-      cout << "attach(const value_type& entry) not implemented yet" << endl;
+      if (used == capacity) resize(int(1.5*capacity) + 1);
+
+      if (current_index == used) {
+         data[used] = entry;
+         used++;
+      } else {
+         for (size_t i = 0; used-i > current_index; i++) data[used-i] = data[used-(i+1)];
+         current_index++;
+         data[current_index] = entry;
+         used++;
+      }
    }
 
    void sequence::remove_current()
    {
-      cout << "remove_current() not implemented yet" << endl;
+      if (current_index == (used-1)) {
+         used--;
+      } else {
+         for (size_t i = current_index; i < used-1; i++) data[i] = data[i+1];
+         used--;
+      }
    }
 
    sequence& sequence::operator=(const sequence& source)
    {
-      cout << "operator=(const sequence& source) not implemented yet" << endl;
+      if (this != &source) {
+         value_type* temp = new value_type[source.capacity];
+         for (size_t i = 0; i < source.used; i++) temp[i] = source.data[i];
+
+         delete[] data;
+         data = temp;
+         used = source.used;
+         capacity = source.capacity;
+         current_index = source.current_index;
+
+      }
       return *this;
    }
 
    // CONSTANT MEMBER FUNCTIONS
    sequence::size_type sequence::size() const
-   {
-      cout << "size() not implemented yet" << endl;
-      return 0; // dummy value returned
+   {;
+      return used;
    }
 
    bool sequence::is_item() const
    {
-      cout << "is_item() not implemented yet" << endl;
-      return false; // dummy value returned
+      if (current_index < used) return true;
+      return false;
    }
 
    sequence::value_type sequence::current() const
    {
-      cout << "current() not implemented yet" << endl;
-      return value_type(); // dummy value returned
+      return data[current_index];
    }
 }
 
