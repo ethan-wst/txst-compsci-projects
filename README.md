@@ -4,8 +4,8 @@ An in progress compilation of computer science projects and assignments from Tex
 
 ## Table of Contents: 
 
-- [3358 Data Structures & Algorithms](#3358DataStructures&Algorithms)
-- [2318 Assembly Language](#2318AssemblyLanguage)
+- [3358 Data Structures & Algorithms](#3358-Data-Structures-&-Algorithms)
+- [2318 Assembly Language](#2318-Assembly-Language)
 
 ## 3358 Data Structures & Algoritms:
 
