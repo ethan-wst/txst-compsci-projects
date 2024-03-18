@@ -13,5 +13,7 @@ An in progress compilation of computer science projects and assignments from Tex
 - [Assignment 02](3358-data-structures/3358-assignment-02)
 - [Assignment 03](3358-data-structures/3358-assignment-03)
 - [Assignment 04](3358-data-structures/3358-assignment-04)
+- [Assignment 05](3358-data-structures/3358-assignment-05)
 
 ## 2318 Assembly Language:
+- [Assignment 02](2318-assembly-language/2318-assignment-02)
