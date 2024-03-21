@@ -9,21 +9,22 @@ namespace CS3358_SP2024_A5P2
    void ShowAll_BF(PNode* pListHead, ostream& outs)
    {
       if (pListHead == 0) return;
-      cnPtrQueue q;
+      cnPtrQueue* q = new cnPtrQueue;
       while (pListHead != 0) {
          if (pListHead->data != 0) {
-            q.push(pListHead->data);
+            q->push(pListHead->data);
          }
          pListHead = pListHead->link;
       }
-      while (!q.empty()) {
-         CNode* cursor = q.front();
-         q.pop();
-         cout << cursor->data << "  ";
+      while (!q->empty()) {
+         CNode* cursor = q->front();
+         q->pop();
+         outs << cursor->data << "  ";
          if (cursor->link != 0) {
-            q.push(cursor->link);
+            q->push(cursor->link);
          }
       }
+      delete q;
    }
    
    void Destroy_cList(CNode*& cListHead)

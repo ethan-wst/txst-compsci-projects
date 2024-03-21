@@ -4,7 +4,7 @@ using namespace std;
 
 namespace CS3358_SP2024_A5P2
 {
-	cnPtrQueue::cnPtrQueue() : numItems{0} {}
+	cnPtrQueue::cnPtrQueue() :  inStack(), outStack(), numItems(0) {}
 
    void cnPtrQueue::push(CNode* cnPtr) {
       inStack.push(cnPtr);
@@ -39,7 +39,7 @@ namespace CS3358_SP2024_A5P2
       return outStack.empty() && inStack.empty();
    }
 
-   size_t cnPtrQueue::size() const {
+   cnPtrQueue::size_type cnPtrQueue::size() const {
       return numItems;
    }
 }
