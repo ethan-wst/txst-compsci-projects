@@ -124,16 +124,14 @@ namespace CS3358_SP2024_A7
 
    void p_queue::push(const value_type& entry, size_type priority)
    {
-      if (used == capacity) resize(capacity*1.5);
+      if (used == capacity) resize((capacity+1)*1.5);
       heap[used].data = entry;
       heap[used].priority = priority;
+      used++;
 
-      if (used == 0) return;
-
-      for (size_t i = used; priority > parent_priority(i); i = (i-1)/2) {
+      for (size_t i = used - 1; priority > parent_priority(i); i = (i-1)/2) {
          swap_with_parent(i);
       }
-      used++;
    }
 
    void p_queue::pop()
