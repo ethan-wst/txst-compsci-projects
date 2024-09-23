@@ -28,7 +28,6 @@ public class Total
       // Read the input and write the output
 
       double total = 0;
-
       while (in.hasNextDouble())
       {
          double value = in.nextDouble();
