@@ -53,25 +53,32 @@ public class BankAccount {
     }
 
     public static void main(String[] args) {
+        
+        System.out.println("The total accounts we have now is: " + BankAccount.getTotalAccounts());
+
         // Creating multiple accounts
         BankAccount account1 = new BankAccount(500.0);
         BankAccount account2 = new BankAccount(1500.0);
 
-        // Displaying account numbers and balances
-        System.out.println("Account 1 Number: " + account1.getAccountNumber());
-        System.out.println("Account 1 Balance: $" + account1.getBalance());
+        System.out.println("The total accounts we have now is: " + BankAccount.getTotalAccounts());
+        System.out.println("The total accounts we have now is: " + account1.getTotalAccounts());
+        System.out.println("The total accounts we have now is: " + account2.getTotalAccounts());
 
-        System.out.println("Account 2 Number: " + account2.getAccountNumber());
-        System.out.println("Account 2 Balance: $" + account2.getBalance());
+        // // Displaying account numbers and balances
+        // System.out.println("Account 1 Number: " + account1.getAccountNumber());
+        // System.out.println("Account 1 Balance: $" + account1.getBalance());
 
-        // Checking total number of accounts (using static method)
-        System.out.println("Total accounts: " + BankAccount.getTotalAccounts());
+        // System.out.println("Account 2 Number: " + account2.getAccountNumber());
+        // System.out.println("Account 2 Balance: $" + account2.getBalance());
 
-        // Resetting account numbering
-        BankAccount.resetAccountNumbering();
+        // // Checking total number of accounts (using static method)
+        // System.out.println("Total accounts: " + BankAccount.getTotalAccounts());
 
-        // Creating a new account after reset
-        BankAccount account3 = new BankAccount(2000.0);
-        System.out.println("Account 3 Number after reset: " + account3.getAccountNumber());
+        // // Resetting account numbering
+        // BankAccount.resetAccountNumbering();
+
+        // // Creating a new account after reset
+        // BankAccount account3 = new BankAccount(2000.0);
+        // System.out.println("Account 3 Number after reset: " + account3.getAccountNumber());
     }
 }
