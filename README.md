@@ -4,8 +4,9 @@ An in progress compilation of computer science projects and assignments from Tex
 
 ## Table of Contents: 
 
-- [3358 Data Structures & Algorithms](#3358-Data-Structures-&-Algorithms)
-- [2318 Assembly Language](#2318-Assembly-Language)
+- [3358 Data Structures & Algorithms](3358-data-structures)
+- [2318 Assembly Language](2318-assembly-language)
+- [3354 Object Oriented Design and Programming](3354-object-oriented-design)
 
 ## 3358 Data Structures & Algoritms:
 
@@ -14,6 +15,14 @@ An in progress compilation of computer science projects and assignments from Tex
 - [Assignment 03](3358-data-structures/3358-assignment-03)
 - [Assignment 04](3358-data-structures/3358-assignment-04)
 - [Assignment 05](3358-data-structures/3358-assignment-05)
+- [Assignment 06](3358-data-structures/3358-assignment-06)
+- [Assignment 07](3358-data-structures/3358-assignment-07)
 
 ## 2318 Assembly Language:
+- [Assignment 01](2318-assembly-language/2318-assignment-01)
 - [Assignment 02](2318-assembly-language/2318-assignment-02)
+- [Assignment 03](2318-assembly-language/2318-assignment-03)
+
+## 3354 Object Oriented Design and Programming:
+- [Participation](3354-object-oriented-design/3354-participation)
+- [Project](3354-object-oriented-design/3354-project)
